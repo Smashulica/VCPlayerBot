@@ -70,7 +70,7 @@ async def player(client, message):
 
 @Client.on_message(filters.command(["skip", f"skip@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def skip_track(_, m: Message):
-    msg=await m.reply('trying to skip from queue..')
+    msg=await m.reply('incerc sa sar videoclipul din playlist..')
     if not Config.CALL_STATUS:
         await msg.edit(
             "Player is idle, start the player using below button. ㅤㅤㅤㅤ",
@@ -162,14 +162,14 @@ async def set_vol(_, m: Message):
         await delete_messages([m])
         return
     if len(m.command) < 2:
-        await m.reply_text('Change Volume of Your VCPlayer. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ', reply_markup=await volume_buttons())
+        await m.reply_text('Poti seta volumul folosind butoanele de mai jos. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ', reply_markup=await volume_buttons())
         await delete_messages([m])
         return
     if not 1 < int(m.command[1]) < 200:
-        await m.reply_text(f"Only 1-200 range is accepeted. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await volume_buttons())
+        await m.reply_text(f"Trebuie sa alegi un volum intre 1-200. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await volume_buttons())
     else:
         await volume(int(m.command[1]))
-        await m.reply_text(f"Succesfully set volume to {m.command[1]} ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await volume_buttons())
+        await m.reply_text(f"Volum a fost setat la {m.command[1]} ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await volume_buttons())
     await delete_messages([m])
 
     
@@ -326,5 +326,5 @@ async def seek_playout(client, m: Message):
 
 @Client.on_message(filters.command(["settings", f"settings@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)
 async def settings(client, m: Message):
-    await m.reply(f"Configure Your VCPlayer Settings Here. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await settings_panel(), disable_web_page_preview=True)
+    await m.reply(f"Configureaza BOT'u din acest meniu. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await settings_panel(), disable_web_page_preview=True)
     await delete_messages([m])

@@ -169,7 +169,7 @@ async def set_vol(_, m: Message):
         await m.reply_text(f"Trebuie sa alegi un volum intre 1-200. ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await volume_buttons())
     else:
         await volume(int(m.command[1]))
-        await m.reply_text(f"Volum a fost setat la {m.command[1]} ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await volume_buttons())
+        await m.reply_text(f"Volumul a fost setat la {m.command[1]} ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ", reply_markup=await volume_buttons())
     await delete_messages([m])
 
     

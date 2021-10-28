@@ -1538,7 +1538,7 @@ async def settings_panel():
                 InlineKeyboardButton(f"{'✅ Enabled' if Config.REPLY_PM else '🚫 Disabled'}", callback_data='reply_msg'),
             ],
             [
-                InlineKeyboardButton('🗑 Close', callback_data='close'),
+                InlineKeyboardButton('🗑 Inchide', callback_data='close'),
             ]
             
         ]
@@ -1570,7 +1570,7 @@ async def recorder_settings():
             InlineKeyboardButton(f"{Config.RECORDING_DUMP if Config.RECORDING_DUMP else 'Not Dumping'}", callback_data='info_recdumb'),
         ],
         [
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton('🗑 Inchide', callback_data='close'),
         ]
         ]
     )
@@ -1589,8 +1589,8 @@ async def volume_buttons():
             InlineKeyboardButton(f"+ 10", callback_data='volume_add'),
         ],
         [
-            InlineKeyboardButton(f"🔙 Back", callback_data='volume_back'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton(f"🔙 Inapoi", callback_data='volume_back'),
+            InlineKeyboardButton('🗑 Inchide', callback_data='close'),
         ]
         ]
     )

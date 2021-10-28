@@ -53,7 +53,7 @@ IST = pytz.timezone(Config.TIME_ZONE)
 if Config.DATABASE_URI:
     from utils import db
 
-HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nIam A Bot Built To Play or Stream Videos In Telegram VoiceChats.\nI Can Stream Any YouTube Video Or A Telegram File Or Even A YouTube Live.</b>"
+HOME_TEXT = "<b>Salut/Buna  [{}](tg://user?id={}) 🙋‍♂️\n\nSunt un BOT creat sa redau videoclipuri sau streamuri in canalele de voce pe telegram.\nPot sa redau orice videoclip de pe YouTube sau video trimis in chat pe telegram, chiar si live de YouTube.</b>"
 admin_filter=filters.create(is_admin) 
 
 @Client.on_message(filters.command(['start', f"start@{Config.BOT_USERNAME}"]))
@@ -78,7 +78,7 @@ async def start(client, message):
                     ],
                 ]
                 )
-            await message.reply("Learn to use the VCPlayer, Showing help menu, Choose from the below options.",
+            await message.reply("Learn to use the VCPlayer, Acesta este meniul de ajutor, alege una dintre optiunile de mai jos.",
                 reply_markup=reply_markup,
                 disable_web_page_preview=True
                 )
@@ -129,12 +129,12 @@ async def start(client, message):
         return
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/VCPlayerBot')
+            InlineKeyboardButton('🇷🇴 Portal ❌ OTR 🇦🇱', url='https://t.me/OTRportal'),
+            InlineKeyboardButton('H.A.I.T.A.🐺🎭😍⚔❤', url='https://t.me/LupiiDinHaita')
         ],
         [
-            InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help_main'),
-            InlineKeyboardButton('🗑 Close', callback_data='close'),
+            InlineKeyboardButton('👨🏼‍🦯 Ajutor', callback_data='help_main'),
+            InlineKeyboardButton('🗑 Inchide', callback_data='close'),
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -179,7 +179,7 @@ async def show_help(client, message):
     if Config.msg.get('help') is not None:
         await Config.msg['help'].delete()
     Config.msg['help'] = await message.reply_text(
-        "Learn to use the VCPlayer, Showing help menu, Choose from the below options.",
+        "Learn to use the VCPlayer, Acesta este meniul de ajutor, alege una dintre optiunile de mai jos.",
         reply_markup=reply_markup,
         disable_web_page_preview=True
         )
@@ -188,15 +188,15 @@ async def show_help(client, message):
 async def repo_(client, message):
     buttons = [
         [
-            InlineKeyboardButton('🧩 Repository', url='https://github.com/subinps/VCPlayerBot'),
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),     
+            InlineKeyboardButton('H.A.I.T.A.🐺🎭😍⚔❤', url='https://t.me/LupiiDinHaita'),
+            InlineKeyboardButton('🇷🇴 Portal ❌ OTR 🇦🇱', url='https://t.me/OTRportal'),     
         ],
         [
-            InlineKeyboardButton("🎞 How to Deploy", url='https://youtu.be/mnWgZMrNe_0'),
+            InlineKeyboardButton("🎞 Cum sa printezi bani", url='https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
             InlineKeyboardButton('🗑 Close', callback_data='close'),
         ]
     ]
-    await message.reply("<b>The source code of this bot is public and can be found at <a href=https://github.com/subinps/VCPlayerBot>VCPlayerBot.</a>\nYou can deploy your own bot and use in your group.\n\nFeel free to star☀️ the repo if you liked it 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply("<b>Daca doresti sa vizitezi mai multe grupuri romanesti de telegram <a href=https://t.me/GrupuriRomanesti>apasa aici !</a>\nDaca iti place acest proiect te rugam sa vizitezi si grupurile de mai jos care au facut posibil asta.\n\nNe poti lasa 5⭐ pe BOT'u de vot de pe @OTRportal 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
     await delete_messages([message])
 
 @Client.on_message(filters.command(['restart', 'update', f"restart@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]) & admin_filter & chat_filter)

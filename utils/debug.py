@@ -211,7 +211,7 @@ async def get_playlist_str():
     else:
         if len(Config.playlist)>=25:
             tplaylist=Config.playlist[:25]
-            pl=f"Listing first 25 songs of total {len(Config.playlist)} songs.\n"
+            pl=f"Listez primele 25 de piese din total de {len(Config.playlist)} 🎧\n"
             pl += f"▶️ **Playlist**: ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ\n" + "\n".join([
                 f"**{i}**. **🎤{x[1]}**\n   👤**Adaugata de:** {x[4]}"
                 for i, x in enumerate(tplaylist)

@@ -31,8 +31,8 @@ from pyrogram import (
 
 buttons = [
     [
-        InlineKeyboardButton('⚡️Make Own Bot', url='https://github.com/subinps/VCPlayerBot'),
-        InlineKeyboardButton('🧩 Join Here', url='https://t.me/subin_works'),
+        InlineKeyboardButton('⚡️Make Own Bot', url='https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
+        InlineKeyboardButton('🧩 Join Here', url='https://t.me/OTRportal'),
     ]
     ]
 def get_cmd(dur):
@@ -58,7 +58,7 @@ async def search(client, query):
         await client.answer_inline_query(
             query.id,
             results=answers,
-            switch_pm_text=("Search a youtube video"),
+            switch_pm_text=("✍️ Cauta video pe YouTube"),
             switch_pm_parameter="help",
             cache_time=0
         )

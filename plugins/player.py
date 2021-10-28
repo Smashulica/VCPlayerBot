@@ -107,7 +107,7 @@ async def add_to_playlist(_, message: Message):
                 text = message.text.split(" ", 1)
                 query = text[1]
             else:
-                await msg.edit("You Didn't gave me anything to play.Reply to a video or a youtube link or a direct link.")
+                await msg.edit("Nu mi-ai trimis inca nimic sa redau. Te rog sa raspunzi la video trimis in chat (sau link de youtube) cu comanda /play pentru a il putea reda pe voice chat.")
                 await delete_messages([message, msg])
                 return
             regex = r"^(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?"
@@ -429,7 +429,7 @@ async def stream(client, m: Message):
             text = m.text.split(" ", 1)
             link = text[1]
         else:
-            k = await msg.edit("Provide a link to stream!")
+            k = await msg.edit("Te rog sa imi trimiti un link de stream! (YouTube live, stream sau .m3u8)")
             await delete_messages([m, k])
             return
         regex = r"^(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?"
